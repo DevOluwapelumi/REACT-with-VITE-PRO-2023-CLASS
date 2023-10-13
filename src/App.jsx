@@ -37,10 +37,10 @@ function App() {
   return (
     <>
       <Home />
-      <NavBar />
-      <Footer />
+      {/* <NavBar /> */}
+      {/* <Footer /> */}
 
-      <div className="container">
+      {/* <div className="container">
     <div className="well">
         <table className="table table-bordered table-striped">
             <thead>
@@ -70,9 +70,10 @@ function App() {
             </tbody>
         </table>
     </div>
-</div>
+</div> */}
 
-      <Event/>
+
+      {/* <Event/> */}
     </>
   );
 }

@@ -23,6 +23,7 @@ const Event = () => {
         <button onClick={Decrement} className="btn btn-danger rounded rounded-3">Decrement</button>
         <input type="text" placeholder="Enter your Name" className="form-control" onChange={(event) => setName(event.target.value)} />
     </div>
+
     </>
   )
 }

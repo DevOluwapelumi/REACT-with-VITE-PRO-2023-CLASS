@@ -34,11 +34,11 @@ const Home = () => {
     setTableData(updatedTableData);
   };
 
-  const editRow = (index) => {
-    const selectedRowData = tableData[index];
-    setFormData(selectedRowData);
-    setSelectedRowIndex(index);
-  };
+  // const editRow = (index) => {
+  //   const selectedRowData = tableData[index];
+  //   setFormData(selectedRowData);
+  //   setSelectedRowIndex(index);
+  // };
 
 
   return (
@@ -139,7 +139,7 @@ const Home = () => {
                   <td>{data.pass}</td>
                   <button
                   className="btn btn-secondary"
-                  onClick={() => editRow(index)}
+                  // onClick={() => editRow(index)}
                 >
                   Update
                 </button>

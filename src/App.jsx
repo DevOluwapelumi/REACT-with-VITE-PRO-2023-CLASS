@@ -1,42 +1,41 @@
 import './App.css'
-import Event from './components/Event';
-import Footer from './components/Footer';
-import NavBar from './components/NavBar';
-import Home from './pages/Home';
+import Weather from './components/Weather';
 
 
 function App() {
 
 
-  const users = [
-    {
-      id: 1,
-      name: "John Doe",
-      username: "johndoe",
-      email: "john@example.com",
-      password: "password123",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      username: "janesmith",
-      email: "jane@example.com",
-      password: "password456",
-    },
-    {
-      id: 3,
-      name: "Bob Johnson",
-      username: "bobjohnson",
-      email: "bob@example.com",
-      password: "password789",
-    },
-  ];
+  // const users = [
+  //   {
+  //     id: 1,
+  //     name: "John Doe",
+  //     username: "johndoe",
+  //     email: "john@example.com",
+  //     password: "password123",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Jane Smith",
+  //     username: "janesmith",
+  //     email: "jane@example.com",
+  //     password: "password456",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Bob Johnson",
+  //     username: "bobjohnson",
+  //     email: "bob@example.com",
+  //     password: "password789",
+  //   },
+  // ];
 
 
 
   return (
     <>
-      <Home />
+      <Weather/>
+      {/* <Home /> */}
+      {/* <Fetch/> */}
       {/* <NavBar /> */}
       {/* <Footer /> */}
 

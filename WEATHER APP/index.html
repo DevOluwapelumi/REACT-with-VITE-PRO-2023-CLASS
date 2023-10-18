@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./images/Mars.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body style="background: wheat; background-image: url(./images/Weatherimage.jpg); background-repeat: no-repeat; background-size: cover;" >
+    <div id="root">
+        <div class="App">
+    <div class="bg-container-fluid" style="height: 100vh;">
+    <div class="h-100 px-0 container-fluid">
+        <div class="row h-100">
+            <div class="p-md-5 pt-5 pt-md-0 d-flex flex-column justify-content-center col-md-8">
+                <div class="d-flex justify-content-between mb-3 px-md-5 col-12 col-md-6">
+                    <input type="text"  placeholder="Search Location" class="p-1 w-75 ms-5 " id="userInput" onkeyup="getData()">
+                </div>
+                <div class="align-items-endx h-75 d-flex mt-5">
+                    <div class="row d-flex flex-row align-items-center ps-md-5 ps-3 col-md-6 mt-5">
+                        <div class="col-md-12 mt-5 ">
+                            <h2 id="temp" class="deg"></h2>
+                        </div>
+                        <div class="col-8 h-100 flex-column">
+                            <b id="nam" style="font-size: xx-large; color: red;"></b>
+                            <b id="con" style="font-size: xx-large; color: red;"></b>
+                        </div>
+                        <div class="col">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Details py-5 col-md-4">
+                <div class="px-md-5 px-3 d-flex flex-column align-items-center h-100 justify-content-center">
+                    <div class="px-0 container">
+                        <h1 class="fw-bold bg-warning">WEATHER DETAILS...</h1>
+                        <ul class="pt-4 px-0">
+                            <li>
+                                <span class="inform fw-bold"><b>Location</b></span>
+                                <span id="namy"></span>
+                                <span id="cony"></span>
+                            </li>
+                            <li>
+                                <span class="inform fw-bold"><b>Description</b></span>
+                                <span id="dest"></span>
+                            </li>
+                            <li>
+                                <span class="inform fw-bold"><b>Humidity</b></span>
+                                <span id="hum"></span>
+                            </li>
+                            <li>
+                                <span class="inform fw-bold"><b>Degree</b></span>
+                                <span id="deg"></span>
+                            </li>
+                            <li>
+                                <span class="inform fw-bold"><b>Time~zone</b></span>
+                                <span id="zon"></span>
+                            </li>
+                        </ul>
+                        <ul class="pt-5 px-0  border-top mt-5">
+                            <li>
+                                <span class="inform fw-bold"><b>Longitude</b></span>
+                                <span id="long"></span>
+                            </li>
+                            <li>
+                                <span class="inform fw-bold"><b>Latitude</b></span>
+                                <span id="lat"></span>
+                            </li>
+                            <li>
+                                <span class="inform fw-bold"><b>Sunrise</b></span>
+                                <span id="rise"></span>
+                            </li>
+                            <li>
+                                <span class="inform fw-bold"><b>Sunset</b></span>
+                                <span id="set"></span>
+                            </li>
+                            <li>
+                                <span class="inform fw-bold"><b>Pressure</b></span>
+                                <span id="pre"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-bottom pb-3 container-fluid">
+            <div class="text-end mx-auto col-11 col">
+                <p class="small">
+                    Designed by :
+                    <a href="https://www.linkedin.com/in/victor-oluwadarasimi">OLUWAPELUMI</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+      
+</body>
+
+            <script>
+                  const getData = async ()=>{
+        let myApi = 'a3b8d6fb17f68e5be7796cea40bdfb96'
+        let endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${userInput.value}&appid=${myApi}&units=metric`
+
+       
+        let response = await fetch(endpoint) 
+        fetch(endpoint)
+        .then((response)=>response.json())
+        .then((convertedResponse=>{
+            console.log(convertedResponse)
+            let getit = convertedResponse.wind.deg
+           console.log(getit)
+           deg.innerHTML = `${getit}<sup>o</sup>`
+
+           let zone = convertedResponse.timezone
+           console.log(zone)
+           zon.innerHTML = `${zone}<sup>o</sup>`
+
+           let name = convertedResponse.name
+           console.log(name)
+           nam.innerHTML = `${name},`
+
+           let cosusunset = convertedResponse.sys.country
+           console.log(cosusunset)
+           con.innerHTML = `${cosusunset}`
+
+           let namey = convertedResponse.name
+           console.log(namey)
+           namy.innerHTML = `${namey},`
+
+           let coney = convertedResponse.sys.country
+           console.log(coney)
+           cony.innerHTML = `${coney}`
+
+           let Des = convertedResponse.weather[0].description
+           console.log(Des)
+           dest.innerHTML = `${Des}`
+
+           let humidity = convertedResponse.main.humidity
+           console.log(humidity)
+           hum.innerHTML = `${humidity}g.m<sup>-3</sup>`
+
+           let getat = Math.round(convertedResponse.main.temp)
+           console.log(getat)
+           temp.innerHTML = `${getat}<sup>o</sup>C`
+
+
+
+
+
+
+           
+           let pressure = convertedResponse.main.pressure
+           console.log(pressure)
+           pre.innerHTML = `${pressure}N/m<sup>2</sup>`
+
+           let latitute = convertedResponse.coord.lat
+           console.log(latitute)
+           lat.innerHTML = `${latitute}<sup>o</sup>`
+
+           let longitude = convertedResponse.coord.lon
+           console.log(longitude)
+           long.innerHTML = `${longitude}<sup>o</sup>`
+
+           let susunset = convertedResponse.sys.sunrise
+           console.log(susunset)
+           rise.innerHTML = `${susunset}<sup>o</sup>`
+
+           let sunset = convertedResponse.sys.sunset
+           console.log(sunset)
+           set.innerHTML = `${sunset}<sup>o</sup>`
+
+        }))
+    }    
+            </script>
+</html>

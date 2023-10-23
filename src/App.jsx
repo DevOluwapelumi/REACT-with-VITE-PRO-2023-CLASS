@@ -1,5 +1,5 @@
 import './App.css'
-import Weather from './components/Weather';
+import Button from './components/Props/Button';
 
 
 function App() {
@@ -32,8 +32,10 @@ function App() {
 
 
   return (
-    <>
-      <Weather/>
+      <>
+          <Button name="Edit" lastname="Oluwapelumi" style="text-red-400 rounded-md border px-4 py-2 my-4 mx-10"/>
+          <Button name="Delete" lastname="Pelumi" style="text-green-400 rounded-md bg-gray-200 border px-8 py-2 my-4 mx-10"/>
+      {/* <Weather/> */}
       {/* <Home /> */}
       {/* <Fetch/> */}
       {/* <NavBar /> */}

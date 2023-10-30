@@ -1,9 +1,8 @@
 import './App.css'
 import Button from './components/Props/Button';
-import Test from './components/Test';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-import Form from './pages/Form';
+import Formik from './pages/Formik';
 
 
 function App() {
@@ -38,8 +37,9 @@ function App() {
 
   return (
       <>
-          <Form/>
-          <Test/>
+          {/* <Form/> */}
+          {/* <Test /> */}
+          <Formik/>
           <Button name="Edit" lastname="Oluwapelumi" style="text-red-400 rounded-md border px-4 py-2 my-4 mx-10"/>
           <Button name="Delete" lastname="Pelumi" style="text-green-400 rounded-md bg-gray-200 border px-8 py-2 my-4 mx-10"/>
       {/* <Weather/> */}

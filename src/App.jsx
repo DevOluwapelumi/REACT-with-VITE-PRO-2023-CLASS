@@ -3,6 +3,7 @@ import Button from './components/Props/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Formik from './pages/Formik';
+import Count from './pages/Count';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
       <>
           {/* <Form/> */}
           {/* <Test /> */}
+          <Count />
           <Formik/>
           <Button name="Edit" lastname="Oluwapelumi" style="text-red-400 rounded-md border px-4 py-2 my-4 mx-10"/>
           <Button name="Delete" lastname="Pelumi" style="text-green-400 rounded-md bg-gray-200 border px-8 py-2 my-4 mx-10"/>

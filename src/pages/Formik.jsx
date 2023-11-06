@@ -37,7 +37,7 @@ const Formik = () => {
             name="firstName"
             onChange={formik.handleChange}
             value={formik.values.firstName}
-            className="border rounded-md p-3 my-3"
+            className="border rounded-md p-3 my-3 form-control"
             required
                   />
                   <div>{formik.errors.lastName}</div>
@@ -47,7 +47,7 @@ const Formik = () => {
             name="lastName"
             onChange={formik.handleChange}
             value={formik.values.lastName}
-            className="border rounded-md p-3 my-3"
+            className="border rounded-md p-3 my-3 form-control"
             required
                   />
                   <div>{formik.errors.email}</div>
@@ -57,7 +57,7 @@ const Formik = () => {
             name="email"
             onChange={formik.handleChange}
             value={formik.values.email}
-            className="border rounded-md p-3 my-3"
+            className="border rounded-md p-3 my-3 form-control"
             required
                   />
                   <div>{formik.errors.password}</div>
@@ -67,7 +67,7 @@ const Formik = () => {
             name="password"
             onChange={formik.handleChange}
             value={formik.values.password}
-            className="border rounded-md p-3 my-3"
+            className="border rounded-md p-3 my-3 form-control"
             required
           />
           <button

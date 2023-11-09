@@ -6,6 +6,7 @@ import Signup from './pages/Form/Signup';
 import Login from './pages/Form/Login';
 import Home from './pages/Home';
 import Count from './pages/Count';
+import Weather from '../src/components/Weather';
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
 
 
   return (
-      <>
+    <>
+      <Weather/>
           <Routes>
               {/* <Route path='/' element={<NavBar/>}/> */}
               <Route path='/signup' element={<Signup/>}/>

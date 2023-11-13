@@ -7,9 +7,26 @@ import Login from './pages/Form/Login';
 import Home from './pages/Home';
 import Count from './pages/Count';
 import Weather from '../src/components/Weather';
+import { useEffect } from "react";
 
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    if ("ServiceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((registration) => {
+            console.log("sw registered: ", registration);
+          })
+          .catch((registrationError) => {
+            console.log("sw registration failed: ", registrationError);
+          });
+      });
+    }
+  }, []);
+
+
     const notify = () => toast("Wow so easy!");
 
 
@@ -18,7 +35,6 @@ function App() {
     <>
       <Weather/>
           <Routes>
-              {/* <Route path='/' element={<NavBar/>}/> */}
               <Route path='/signup' element={<Signup/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/count' element={<Count/>}/>

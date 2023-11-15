@@ -6,8 +6,9 @@ import Signup from './pages/Form/Signup';
 import Login from './pages/Form/Login';
 import Home from './pages/Home';
 import Count from './pages/Count';
-import Weather from '../src/components/Weather';
 import { useEffect } from "react";
+import { Formik } from 'formik';
+import ClassComponent from './components/classComponent';
 
 
 const App = () => {
@@ -33,8 +34,9 @@ const App = () => {
 
   return (
     <>
-      <Weather/>
+    <ClassComponent/>
           <Routes>
+              <Route path='/' element={<Formik/>}/>
               <Route path='/signup' element={<Signup/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/count' element={<Count/>}/>
